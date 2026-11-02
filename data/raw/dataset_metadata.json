@@ -1,0 +1,16 @@
+{
+  "dataset_name": "Spanish Trading Journal & Synthetic Indices NLP Corpus (Deriv Volatility 100 / MT5)",
+  "origin": "Corpus estructurado y curado para análisis de bitácoras operativas de trading e indicadores técnicos en español",
+  "license": "MIT Educational & Academic License",
+  "acquisition_date": "2026-11-02",
+  "raw_rows": 2118,
+  "clean_rows": 2100,
+  "train_rows": 1680,
+  "test_rows": 420,
+  "random_seed": 42,
+  "classes": {
+    "Perdedora_Error_Operativo": 900,
+    "Ganadora_Disciplinada": 800,
+    "Riesgo_Neutral": 400
+  }
+}
