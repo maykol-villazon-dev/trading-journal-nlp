@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradingJournal NLP — Deriv Volatility 100 & MT5 Strategy Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       CABECERA PRINCIPAL ESTILO TERMINAL MT5 / DERIV
+       ========================================================================= -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="logo-pulse">
+          <span class="pulse-dot"></span>
+          <span class="logo-icon">📊</span>
+        </div>
+        <div>
+          <h1 class="brand-title">TradingJournal <span class="badge-nlp">NLP 2.0</span></h1>
+          <p class="brand-subtitle">Analizador de Estrategias y Errores Operativos • Deriv Volatility 100 & MT5</p>
+        </div>
+      </div>
+
+      <div class="header-status">
+        <div class="status-pill" id="apiStatusPill">
+          <span class="status-indicator online" id="statusDot"></span>
+          <span id="statusText">Conectando API...</span>
+        </div>
+        <div class="meta-tag">Modelo: <strong id="headerModelTag">LogisticRegression</strong></div>
+        <div class="meta-tag">Modo NLP: <strong id="headerNlpTag">Lematización (1,2 Bigramas)</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- =========================================================================
+         BANNER DE KPIs GLOBALES (CONSUME /api/v1/stats)
+         ========================================================================= -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-title">Operaciones Analizadas</span>
+          <span class="kpi-icon">📝</span>
+        </div>
+        <div class="kpi-value" id="kpiTotalTrades">--</div>
+        <div class="kpi-meta">En historial estructurado</div>
+      </div>
+
+      <div class="kpi-card win">
+        <div class="kpi-header">
+          <span class="kpi-title">Winrate Global</span>
+          <span class="kpi-icon">🎯</span>
+        </div>
+        <div class="kpi-value" id="kpiWinrate">--%</div>
+        <div class="kpi-meta" id="kpiWinBreakdown">Ganadoras vs Perdedoras</div>
+      </div>
+
+      <div class="kpi-card alert">
+        <div class="kpi-header">
+          <span class="kpi-title">Error Fatal #1 del Trader</span>
+          <span class="kpi-icon">⚠️</span>
+        </div>
+        <div class="kpi-value small-text" id="kpiTopFatalError">Cargando...</div>
+        <div class="kpi-meta">Causa principal de pérdidas</div>
+      </div>
+
+      <div class="kpi-card radar">
+        <div class="kpi-header">
+          <span class="kpi-title">Radar Volatility 100</span>
+          <span class="kpi-icon">⚡</span>
+        </div>
+        <div class="kpi-value" id="kpiV100Winrate">--%</div>
+        <div class="kpi-meta" id="kpiV100Trades">Trades en índice sintético</div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 1: ENTRADA DE BITÁCORA Y CASOS DE PRUEBA
+         ========================================================================= -->
+    <section class="journal-input-section">
+      <div class="panel-card">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <span class="panel-badge">Capa 5 / Capa 4</span>
+            <h2 class="panel-title">Entrada de Bitácora de Trading (Español)</h2>
+          </div>
+          <span class="panel-hint">Ingresa tu apunte operativo o selecciona un caso de trading:</span>
+        </div>
+
+        <!-- Botones de Casos Rápidos -->
+        <div class="example-buttons-row">
+          <button class="btn-chip" id="btnCaseRSI">
+            <span class="chip-dot alert"></span>
+            <strong>Caso Kenji:</strong> RSI 28 sin esperar vela ❌
+          </button>
+          <button class="btn-chip" id="btnCaseV100Win">
+            <span class="chip-dot win"></span>
+            <strong>Caso V100:</strong> EMA 20 + MACD y Take Profit ✅
+          </button>
+          <button class="btn-chip" id="btnCaseNoSL">
+            <span class="chip-dot alert"></span>
+            <strong>Caso Crash:</strong> Sin Stop Loss y FOMO ❌
+          </button>
+          <button class="btn-chip" id="btnCaseBreakEven">
+            <span class="chip-dot neutral"></span>
+            <strong>Caso Neutral:</strong> Bollinger + Break Even ⚖️
+          </button>
+        </div>
+
+        <!-- Formulario de Texto -->
+        <form id="journalForm" class="journal-form">
+          <div class="textarea-wrapper">
+            <textarea
+              id="journalTextInput"
+              rows="4"
+              placeholder="Ejemplo: Entré en compra cuando el RSI estaba en 28, pero no esperé el cierre de la vela y terminé perdiendo..."
+              maxlength="1000"
+              required
+            ></textarea>
+            <div class="textarea-footer">
+              <div class="input-counters">
+                <span id="wordCountBadge" class="counter-badge invalid">0 palabras (mínimo 3)</span>
+                <span id="charCountBadge" class="counter-badge info">0 / 1000 caracteres</span>
+              </div>
+              <button type="button" class="btn-ghost" id="btnClearText">Limpiar</button>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="btnAnalyze">
+              <span class="btn-icon">⚡</span>
+              <span id="btnAnalyzeText">Analizar Bitácora con Pipeline NLP</span>
+            </button>
+            <div id="loadingSpinner" class="spinner hidden"></div>
+          </div>
+        </form>
+
+        <div id="validationAlert" class="alert-box error hidden"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 2: RESULTADOS DEL DIAGNÓSTICO ML Y EXTRACCIÓN ESTRUCTURADA
+         ========================================================================= -->
+    <section id="resultsSection" class="results-section hidden">
+      <div class="results-grid">
+
+        <!-- Tarjeta de Diagnóstico del Modelo ML (Capa 3) -->
+        <div class="panel-card diagnosis-card" id="diagnosisCard">
+          <div class="panel-header">
+            <span class="panel-badge">Capa 3: Inferencia ML</span>
+            <span class="inference-time" id="inferenceTimeBadge">⏱️ 0 ms</span>
+          </div>
+
+          <div class="diagnosis-body">
+            <div class="diagnosis-status-tag" id="diagnosisTag">Perdedora_Error_Operativo</div>
+            <div class="confidence-meter-container">
+              <div class="confidence-header">
+                <span>Nivel de Certeza del Modelo:</span>
+                <strong id="confidencePercentage">0%</strong>
+              </div>
+              <div class="confidence-bar-bg">
+                <div class="confidence-bar-fill" id="confidenceBarFill" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- Desglose de Probabilidades por Clase -->
+            <div class="class-probabilities">
+              <h4 class="subheading">Distribución de Probabilidades:</h4>
+              <div class="prob-row">
+                <span class="prob-label win-text">Ganadora Disciplinada:</span>
+                <div class="prob-bar-container">
+                  <div class="prob-bar win" id="probBarWin" style="width: 0%;"></div>
+                </div>
+                <span class="prob-num" id="probNumWin">0%</span>
+              </div>
+              <div class="prob-row">
+                <span class="prob-label neutral-text">Riesgo Neutral / Break-Even:</span>
+                <div class="prob-bar-container">
+                  <div class="prob-bar neutral" id="probBarNeutral" style="width: 0%;"></div>
+                </div>
+                <span class="prob-num" id="probNumNeutral">0%</span>
+              </div>
+              <div class="prob-row">
+                <span class="prob-label loss-text">Perdedora Error Operativo:</span>
+                <div class="prob-bar-container">
+                  <div class="prob-bar loss" id="probBarLoss" style="width: 0%;"></div>
+                </div>
+                <span class="prob-num" id="probNumLoss">0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Extracción Estructurada de Trading (Capa 2 / Reglas de Dominio) -->
+        <div class="panel-card entities-card">
+          <div class="panel-header">
+            <span class="panel-badge">Capa 2: Extracción Estructurada</span>
+            <span class="panel-hint">Parámetros operativos detectados</span>
+          </div>
+
+          <div class="entity-list">
+            <div class="entity-item">
+              <span class="entity-label">📈 Indicador Técnico:</span>
+              <span class="entity-value" id="entityIndicator">--</span>
+            </div>
+            <div class="entity-item">
+              <span class="entity-label">🎯 Acción Operativa:</span>
+              <span class="entity-value" id="entityAction">--</span>
+            </div>
+            <div class="entity-item">
+              <span class="entity-label">🌐 Mercado / Activo Sintético:</span>
+              <span class="entity-value" id="entityMarket">--</span>
+            </div>
+            <div class="entity-item">
+              <span class="entity-label">⏱️ Temporalidad:</span>
+              <span class="entity-value" id="entityTimeframe">--</span>
+            </div>
+            <div class="entity-item highlight-error">
+              <span class="entity-label">⚠️ Error Operativo Identificado:</span>
+              <span class="entity-value alert-text" id="entityError">--</span>
+            </div>
+            <div class="entity-item">
+              <span class="entity-label">📊 Resultado Declarado:</span>
+              <span class="entity-value" id="entityOutcome">--</span>
+            </div>
+          </div>
+
+          <div class="volatility-tip-box" id="v100TipBox">
+            <span class="tip-icon">💡</span>
+            <div>
+              <strong>Regla Volatility 100:</strong>
+              <p id="v100TipText">Al operar RSI en sobreventa, espera el cierre de vela de 5 minutos antes de colocar la orden para no ser atrapado por la inercia bajista.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =========================================================================
+           SECCIÓN 3: VISUALIZADOR DEL PIPELINE NLP PASO A PASO (EXIGENCIA PDF 5.6)
+           ========================================================================= -->
+      <div class="panel-card nlp-pipeline-card">
+        <div class="panel-header">
+          <div>
+            <span class="panel-badge">Capa 2: Visualizador del Pipeline NLP</span>
+            <h3 class="panel-title">Desglose Paso a Paso Antes / Después (Demostración de Examen)</h3>
+          </div>
+          <span class="pill-mode" id="pipelineModePill">Modo: Lematización</span>
+        </div>
+
+        <div class="pipeline-flow">
+
+          <!-- Paso 0: Texto Crudo -->
+          <div class="pipeline-step">
+            <div class="step-head">
+              <span class="step-num">0</span>
+              <span class="step-name">Texto Crudo Ingresado</span>
+            </div>
+            <div class="step-content raw-box" id="stepRawText">--</div>
+          </div>
+
+          <!-- Paso 1: Normalización -->
+          <div class="pipeline-step">
+            <div class="step-head">
+              <span class="step-num">1</span>
+              <span class="step-name">Normalización (Minúsculas, URLs eliminadas, Emojis traducidos, Niveles RSI inyectados)</span>
+            </div>
+            <div class="step-content" id="stepNormalized">--</div>
+            <div class="step-note">Transforma niveles numéricos de RSI (ej. &lt;30 &rarr; <code>_nivel_sobreventa_</code>) y emojis (❌ &rarr; <code>_emoji_perdida_</code>).</div>
+          </div>
+
+          <!-- Paso 2: Tokenización -->
+          <div class="pipeline-step">
+            <div class="step-head">
+              <span class="step-num">2</span>
+              <span class="step-name">Tokenización de Dominio</span>
+            </div>
+            <div class="chip-cloud" id="stepTokens"></div>
+            <div class="step-note">Preserva siglas técnicas (<code>rsi</code>, <code>macd</code>, <code>ema</code>, <code>v100</code>) y tokens semánticos compuestos.</div>
+          </div>
+
+          <!-- Paso 3: Stop Words y Negaciones Conservadas -->
+          <div class="pipeline-step highlight-step">
+            <div class="step-head">
+              <span class="step-num">3</span>
+              <span class="step-name">Stop Words (¡Negación "no" y "sin" obligatoriamente conservadas!)</span>
+            </div>
+            <div class="stopwords-display">
+              <div class="sw-column">
+                <span class="sw-column-title">Tokens Conservados:</span>
+                <div class="chip-cloud" id="stepKeptTokens"></div>
+              </div>
+              <div class="sw-column discarded">
+                <span class="sw-column-title">Palabras Vacías Descartadas:</span>
+                <div class="chip-cloud" id="stepRemovedStopwords"></div>
+              </div>
+            </div>
+            <div class="step-note alert-note">
+              <strong>⭐ Punto Clave de la Defensa:</strong> Fíjate cómo la negación <code>"no"</code> se resalta en amarillo y <strong>NO se elimina</strong>. Sin el <code>"no"</code>, la frase <em>"no esperé el cierre de vela"</em> se transformaría en <em>"esperé el cierre de vela"</em>, alterando por completo la detección del error.
+            </div>
+          </div>
+
+          <!-- Paso 4: Lematización vs Stemming -->
+          <div class="pipeline-step">
+            <div class="step-head">
+              <span class="step-num">4</span>
+              <span class="step-name">Lematización Morfológica (Conjugaciones verbales &rarr; Formas Canónicas)</span>
+            </div>
+            <div class="chip-cloud" id="stepLemmas"></div>
+            <div class="step-note">Ejemplo: <code>"entré" &rarr; "entrar"</code>, <code>"esperé" &rarr; "esperar"</code>, <code>"perdiendo" &rarr; "perder"</code>. Normaliza tildes sobre el lema base.</div>
+          </div>
+
+          <!-- Paso 5: Bigramas y Pesos TF-IDF Activos -->
+          <div class="pipeline-step">
+            <div class="step-head">
+              <span class="step-num">5</span>
+              <span class="step-name">Top Bigramas y Términos con Mayor Peso TF-IDF (Vectorización Dispersa)</span>
+            </div>
+            <div class="tfidf-bars-grid" id="stepTfidfBars"></div>
+            <div class="step-note">Los bigramas como <code>"no esperar"</code> y <code>"cierre vela"</code> reciben alto peso en la matriz dispersa (1, 3000), impulsando la predicción del clasificador.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 4: DASHBOARD DE ESTADÍSTICAS HISTÓRICAS DE TRADING (GET /api/v1/stats)
+         ========================================================================= -->
+    <section class="stats-section">
+      <div class="section-title-bar">
+        <div>
+          <h2 class="section-title">Estadísticas de Trading & Errores Operativos</h2>
+          <p class="section-desc">Consumo en vivo de <code>GET /api/v1/stats</code> acumulado sobre la bitácora</p>
+        </div>
+        <button class="btn-secondary" id="btnRefreshStats">🔄 Actualizar Estadísticas</button>
+      </div>
+
+      <div class="stats-grid">
+
+        <!-- Gráfico / Barras de Errores Operativos -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-badge">Psicotrading & Disciplina</span>
+            <h3 class="panel-title">Ranking de Errores Operativos Más Frecuentes</h3>
+          </div>
+          <p class="panel-caption">Frecuencia con la que el trader comete cada indisciplina en su bitácora:</p>
+          <div class="error-bars-list" id="statsErrorBars">
+            <!-- Rellenado dinámicamente con JavaScript -->
+          </div>
+        </div>
+
+        <!-- Rendimiento por Indicador Técnico -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-badge">Efectividad Técnica</span>
+            <h3 class="panel-title">Winrate por Indicador Técnico (RSI, MACD, EMA)</h3>
+          </div>
+          <p class="panel-caption">Tasa de operaciones ganadoras según el indicador primario utilizado:</p>
+          <div class="indicators-table-wrapper">
+            <table class="data-table" id="indicatorsTable">
+              <thead>
+                <tr>
+                  <th>Indicador</th>
+                  <th>Operaciones</th>
+                  <th>Ganadas</th>
+                  <th>Perdidas</th>
+                  <th>Winrate %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rellenado con JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cuadro Destacado: Radar Deriv Volatility 100 -->
+      <div class="panel-card v100-radar-panel">
+        <div class="v100-radar-content">
+          <div class="radar-badge">DERIV VOLATILITY 100 RADAR</div>
+          <h3 class="radar-title">Diagnóstico Algorítmico Preventivo para Volatility 100</h3>
+          <p class="radar-recommendation" id="radarRecommendation">
+            Cargando recomendación algorítmica para Volatility 100...
+          </p>
+          <div class="radar-meta-row">
+            <div class="radar-stat">
+              <span>Trades Registrados V100:</span>
+              <strong id="radarTradesCount">--</strong>
+            </div>
+            <div class="radar-stat">
+              <span>Winrate V100:</span>
+              <strong id="radarWinrateVal">--%</strong>
+            </div>
+            <div class="radar-stat">
+              <span>Error Crítico V100:</span>
+              <strong class="alert-text" id="radarTopError">--</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN 5: COMPARATIVA DE MODELOS ML Y ANÁLISIS DE ERRORES (GET /api/v1/metrics)
+         ========================================================================= -->
+    <section class="metrics-section">
+      <div class="section-title-bar">
+        <div>
+          <h2 class="section-title">Comparativa de Modelos ML & Análisis de Errores (PDF 5.3)</h2>
+          <p class="section-desc">Reporte oficial reproducible serializado en <code>models_prod/metrics_report.json</code></p>
+        </div>
+        <button class="btn-secondary" id="btnRefreshMetrics">📊 Ver Reporte Completo</button>
+      </div>
+
+      <!-- Tabla Comparativa de Modelos -->
+      <div class="panel-card">
+        <div class="panel-header">
+          <span class="panel-badge">Modelos de Clase Evaluados</span>
+          <h3 class="panel-title">LogisticRegression (Producción) vs. MultinomialNB (Baseline)</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table models-table" id="modelsComparisonTable">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Rol</th>
+                <th>Hiperparámetros Óptimos</th>
+                <th>CV 5-Fold F1</th>
+                <th>Accuracy Test</th>
+                <th>Precision Macro</th>
+                <th>Recall Macro</th>
+                <th>F1-Score Macro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rellenado dinámicamente con JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Experimentos de Ablación de NLP -->
+      <div class="ablation-grid">
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-badge">Ablación 1: Morfología</span>
+            <h3 class="panel-title">Stemming vs. Lematización</h3>
+          </div>
+          <div class="ablation-comparison-box" id="ablationStemLemmaBox">
+            <!-- Rellenado por app.js -->
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-header">
+            <span class="panel-badge">Ablación 2: Contexto</span>
+            <h3 class="panel-title">Unigramas (1,1) vs. Bigramas (1,2)</h3>
+          </div>
+          <div class="ablation-comparison-box" id="ablationNgramsBox">
+            <!-- Rellenado por app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Análisis de los 3 Errores del Modelo (Exigencia PDF Sección 5.3) -->
+      <div class="panel-card">
+        <div class="panel-header">
+          <span class="panel-badge">Análisis Cualitativo de Fallos</span>
+          <h3 class="panel-title">3 Casos Reales del Conjunto de Prueba donde el Modelo Falla</h3>
+        </div>
+        <p class="panel-caption">Explicación técnica del motivo lingüístico u operativo de la ambigüedad:</p>
+        <div class="error-analysis-list" id="errorAnalysisList">
+          <!-- Rellenado dinámicamente con JavaScript -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       PIE DE PÁGINA CON METADATOS Y CRÉDITOS
+       ========================================================================= -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <strong>TradingJournal NLP</strong> — Proyecto Integrador de Tópicos Avanzados
+        <p>Docente: Ing. Kenji | Equipo: Maykol (DEV 1) & Oscar Cruz (DEV 2)</p>
+      </div>
+      <div class="footer-col text-right">
+        <span>Arquitectura de 5 Capas • FastAPI • Scikit-Learn • TF-IDF (1,2)</span>
+        <p><a href="/docs" target="_blank" class="footer-link">Swagger Docs (/docs)</a> | <a href="/api/v1/health" target="_blank" class="footer-link">Health (/health)</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
