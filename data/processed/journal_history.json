@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "text": "Entré en compra cuando el RSI estaba en 28, pero no esperé el cierre de la vela y terminé perdiendo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 2,
+    "text": "Operé en corto en el indice V75 contra tendencia principal de la EMA 50 y EMA 200 en en gráfico de M5, no respeté la estructura alcista y termine perdiendo ❌ por actuar con impaciencia frente al gráfico [op 487]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Contra tendencia",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 3,
+    "text": "Ejecuté compra disciplinada buscando spikes en Boom 1000 cuando el RSI tocó 23; respeté mi estrategia esperando el cierre de la vela en en temporalidad M1 y alcancé el objetivo de ganancia",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 4,
+    "text": "Compra técnica en BTCUSD: las bandas de Bollinger mostraron rechazo alcista en en velas de M15, respeté el cierre de vela y mi stop loss, logrando una operación positiva [op 595]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 5,
+    "text": "Entre en compra en Deriv Volatility 100 en temporalidad de 5 minutos justo en zona institucional de soporte y Fibonacci 61.8, esperé el cierre de la vela martillo con stop loss definido y terminé ganando con excelente ratio riesgo beneficio",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 6,
+    "text": "Entré en compra en el sintético V75 en velas de M15 tras toque en la banda inferior de Bollinger con RSI en 18, esperé el cierre de la vela dentro de la banda y salí con ganancia siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 7,
+    "text": "Entré en compra en el índice Volatility 100 en gráfico de M5 tras toque en la banda inferior de Bollinger con RSI en 18, esperé el cierre de la vela dentro de la banda y salí con ganancia 🚀 [op 638]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 8,
+    "text": "Operé en corto en cripto BTCUSD contra tendencia principal de la EMA 50 y EMA 200 en en velas de M15, no respeté la estructura alcista y terminé perdiendo 🔴 cometiendo un fallo clásico de psicotrading [op 652]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Contra tendencia",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 9,
+    "text": "Tomé entrada en compra en Volatility 100 en velas de M15 cuando el precio rebotó limpio en la EMA 50, esperé el cierre de la vela alcista y alcancé mi relación riesgo beneficio 1:2 ganadora con excelente ratio riesgo beneficio",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "EMA",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 10,
+    "text": "Abrí venta operando V75 en MT5 en velas de M15 con el histograma del MACD plano cerca de cero, el activo quedó sin dirección definida y cerré la orden en break even priorizando proteger el capital de la cuenta [op 309]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 11,
+    "text": "Abrí compra en Deriv Crash 500 en gráfico de M5 viendo el RSI en 29, pero no espere el cierre de la vela de confirmación, el precio siguió cayendo y cerré en perdida afectando mi estadística semanal en MT5",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 12,
+    "text": "Operación perdedora en venta operando Step Index en M5: entré sin colocar stop loss en en gráfico de M5 confiando en la EMA 200 y el retroceso quemó gran parte del margen 📉 afectando mi estadística semanal en MT5 [op 674]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 13,
+    "text": "Entre en venta en Step Index en gráfico de M5 cuando el RSI subió a 70 en sobrecompra, espere el cierre de la vela bajista de rechazo y cerré con buena ganancia 🟢 siguiendo las reglas de mi bitácora [op 424]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 14,
+    "text": "Entré en compra buscando spikes en Boom 1000 en M5 justo en zona institucional de soporte y Fibonacci 61.8, esperé el cierre de la vela martillo con stop loss definido y terminé ganando respetando el nivel clave del gráfico [op 607]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 15,
+    "text": "Entré en compra en Volatility 75 en gráfico de M5 sobre la banda media de Bollinger, pero el mercado entró en consolidación lateral sin volumen y cerré en break even sin ganancia ni pérdida al notar agotamiento en las velas [op 258]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 16,
+    "text": "Me ganó la ansiedad y el FOMO en el par BTC/USD: vi que el precio subía rápido en en velas de M15 con Bollinger expandido, entré en compra tarde sin esperar retroceso y cerré en perdida cometiendo un fallo clásico de psicotrading [op 519]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "BTC/USD",
+    "operational_error": "FOMO / Entrada anticipada",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 17,
+    "text": "Entré en venta en Crash 500 en H1 tras confirmarse el cruce bajista del MACD con histograma negativo, esperé el cierre de la vela y cerré la operación en ganancia 🟢",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 18,
+    "text": "Entré en venta operando Step Index en M5 en temporalidad de 5 minutos cerca de la EMA 50, al ver indecisión y mechas en ambos lados moví a break even y la operación cerró neutra en cero al notar agotamiento en las velas",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 19,
+    "text": "Volví a entrar en compra en Deriv Volatility 100 en M5 por revancha tras dos pérdidas seguidas mirando el MACD sin señal clara; caí en sobreoperar y terminé perdiendo otra vez 📉 en una sesión de alta volatilidad sintética [op 649]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 20,
+    "text": "Entré en compra en el índice Step Index de Deriv en temporalidad M1 con el RSI en zona media de 52, el precio no mostró impulso claro hacia el take profit y cerré en break even preventivo mientras esperaba definición de la sesión [op 287]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 21,
+    "text": "Volví a entrar en compra en Volatility 100 en temporalidad de 5 minutos por revancha tras dos pérdidas seguidas mirando el MACD sin señal clara; caí en sobreoperar y terminé perdiendo otra vez rompiendo mis reglas de gestión de riesgo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 22,
+    "text": "Entré en compra en el índice V75 cuando el RSI estaba en 25, pero no esperé el cierre de la vela y terminé perdiendo por no respetar mi plan de trading",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 23,
+    "text": "Ejecuté venta en corto en Step Index con RSI en 73, espere confirmación al cierre de la vela en resistencia y respeté mi stop loss hasta tocar el take profit siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 24,
+    "text": "Entré en compra en Volatility 100 en temporalidad de 5 minutos sobre la banda media de Bollinger, pero el mercado entró en consolidación lateral sin volumen y cerré en break even sin ganancia ni pérdida priorizando proteger el capital de la cuenta [op 370]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 25,
+    "text": "Operé en corto operando Bitcoin en MT5 en velas de M15 combinando divergencia en MACD con rechazo en resistencia; esperé el cierre de la vela y aseguré ganancia en take profit siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 26,
+    "text": "Entré en compra operando V100 en MT5 en H1 con el RSI en zona media de 51, el precio no mostró impulso claro hacia el take profit y cerré en break even preventivo dejando la cuenta intacta para la siguiente entrada",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 27,
+    "text": "Registro de seguimiento en Deriv Volatility 75 en M5: las medias EMA 20 y EMA 50 están entrelazadas en rango horizontal, cerré mi venta en punto de entrada sin ganancia ni pérdida dejando la cuenta intacta para la siguiente entrada [op 278]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 28,
+    "text": "Operación perdedora en venta en el activo V100: entré sin colocar stop loss en en gráfico de M5 confiando en la EMA 200 y el retroceso quemó gran parte del margen 📉 por actuar con impaciencia frente al gráfico [op 633]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 29,
+    "text": "Operación en empate en Volatility 100 en temporalidad de 5 minutos: señal mixta entre MACD y soporte local, decidí cerrar manualmente en precio de entrada sin pérdidas ni ganancias al notar agotamiento en las velas [op 262]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 30,
+    "text": "Operé venta operando Boom 1000 en M5 en H1 viendo el RSI agotado en 70; no me adelanté, esperé el cierre de vela bajista y terminé ganando según la estrategia con gestión de lotaje conservadora en MT5",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 31,
+    "text": "Me apresuré a entrar en compra en el índice Volatility 100 con el RSI marcando 20; no esperé a que cerrara la vela en en temporalidad M1 y me sacó el stop loss perdiendo rompiendo mis reglas de gestión de riesgo [op 410]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 32,
+    "text": "Tomé compra operando caídas en Crash 500 en H1 con el RSI marcando 30, sí esperé el cierre de la vela envolvente sobre soporte y respeté el take profit logrando una operación ganadora respetando el nivel clave del gráfico [op 610]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 33,
+    "text": "Vendí operando V75 en MT5 cuando rompió la EMA 20 en temporalidad M1, cometí el error de entrar sin stop loss y la cuenta sufrió una pérdida grande al girarse el mercado rompiendo mis reglas de gestión de riesgo [op 852]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 34,
+    "text": "Operé en corto operando Step Index en M5 en M5 combinando divergencia en MACD con rechazo en resistencia; esperé el cierre de la vela y aseguré ganancia en take profit siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 35,
+    "text": "Entré en venta en cripto BTCUSD en H1 cerca de la EMA 50, al ver indecisión y mechas en ambos lados moví a break even y la operación cerró neutra en cero priorizando proteger el capital de la cuenta",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 36,
+    "text": "Ejecuté compra disciplinada en el índice V75 cuando el RSI tocó 18; respeté mi estrategia esperando el cierre de la vela en en temporalidad M1 y alcancé el objetivo de ganancia siguiendo las reglas de mi bitácora [op 731]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 37,
+    "text": "Abrí largo en compra operando V100 en MT5 en temporalidad de 5 minutos tras ver divergencia alcista con RSI en 20, esperé confirmación de vela, gestioné el riesgo con stop loss fijo y terminé ganando con gestión de lotaje conservadora en MT5 [op 747]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 38,
+    "text": "Operé en corto en Deriv Volatility 75 contra tendencia principal de la EMA 50 y EMA 200 en en temporalidad M1, no respeté la estructura alcista y termine perdiendo rompiendo mis reglas de gestión de riesgo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Contra tendencia",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 39,
+    "text": "Entré en compra operando V100 en MT5 en H1 tras toque en la banda inferior de Bollinger con RSI en 22, esperé el cierre de la vela dentro de la banda y salí con ganancia 🚀 con gestión de lotaje conservadora en MT5",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 40,
+    "text": "Operé compra en Volatility 100 cuando el RSI marcaba 45 en en temporalidad de 5 minutos, ante la falta de volatilidad protegí la posición en empate técnico",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 41,
+    "text": "Sobreoperé en Crash 500 en en M5 abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en pérdida por actuar con impaciencia frente al gráfico",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 42,
+    "text": "Tomé compra en Crash 500 en temporalidad de 5 minutos con el RSI marcando 24, sí esperé el cierre de la vela envolvente sobre soporte y respeté el take profit logrando una operación ganadora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 43,
+    "text": "Vendí operando caídas en Crash 500 bajo resistencia en en temporalidad de 5 minutos, no respeté mi riesgo inicial porque moví el stop loss esperando un giro y cerré con una pérdida grave por no respetar mi plan de trading [op 402]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Soporte_Resistencia",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "Mover Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 44,
+    "text": "Entré en venta operando V100 en MT5 en velas de M15 debajo de la EMA 50, pero operé sin stop loss esperando que regresara y un spike brusco me dejó con una pérdida fuerte rompiendo mis reglas de gestión de riesgo [op 641]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 45,
+    "text": "Entré en venta en Deriv Crash 500 en M5 cerca de la EMA 50, al ver indecisión y mechas en ambos lados moví a break even y la operación cerró neutra en cero al notar agotamiento en las velas",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 46,
+    "text": "Abrí compra en el índice Step Index de Deriv en velas de M15 viendo el RSI en 27, pero no espere el cierre de la vela de confirmación, el precio siguió cayendo y cerré en pérdida por actuar con impaciencia frente al gráfico [op 599]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 47,
+    "text": "Entre en venta operando Step Index en M5 en M5 en una resistencia, pero cuando el precio se fue en mi contra moví el stop loss dos veces por miedo a perder y terminé perdiendo el doble 🔴 cometiendo un fallo clásico de psicotrading",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Soporte_Resistencia",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Mover Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 48,
+    "text": "Vendí en el par BTC/USD anticipando giro en MACD en H1, no esperé el cierre de la vela para confirmar el rechazo y terminé perdiendo la operación rompiendo mis reglas de gestión de riesgo [op 471]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 49,
+    "text": "Sobreoperé operando Step Index en M5 en en gráfico de M5 abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en perdida [op 595]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 50,
+    "text": "Entré en compra en Volatility 75 con RSI en 26 pero no esperé el cierre de la vela; aunque estuve casi en pérdida, el precio regresó a mi entrada y cerré en break even (operando Boom 1000 en M5 en temporalidad M1, nivel 20, ref #70)",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 51,
+    "text": "Entré en venta en BTCUSD en temporalidad de 5 minutos cuando el RSI subió a 80 en sobrecompra, esperé el cierre de la vela bajista de rechazo y cerré con buena ganancia",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 52,
+    "text": "En Crash 500 esperé confirmación de cierre de vela bajista con MACD negativo y stop loss bien puesto, hice todo con disciplina pero el precio rebotó con fuerza y terminé perdiendo (en el activo V100 en M5, nivel 24, ref #74)",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 53,
+    "text": "Operación perdedora en venta en el par BTC/USD: entré sin colocar stop loss en en temporalidad M1 confiando en la EMA 200 y el retroceso quemó gran parte del margen ❌ cometiendo un fallo clásico de psicotrading [op 733]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 54,
+    "text": "Operación neutral en compra en Boom 1000 en velas de M15: las bandas de Bollinger se estrecharon indicando rango lateral, protegí la entrada en punto de equilibrio y salí en empate manteniendo el riesgo bajo control en MT5 [op 316]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 55,
+    "text": "En Crash 500 esperé confirmación de cierre de vela bajista con MACD negativo y stop loss bien puesto, hice todo con disciplina pero el precio rebotó con fuerza y terminé perdiendo (operando Boom 1000 en M5 en gráfico de M5, nivel 20, ref #64)",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 56,
+    "text": "Operé en corto operando Step Index en M5 contra tendencia principal de la EMA 50 y EMA 200 en en gráfico de M5, no respeté la estructura alcista y terminé perdiendo ❌",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Contra tendencia",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 57,
+    "text": "Entré en compra en Volatility 75 con RSI en 26 pero no esperé el cierre de la vela; aunque estuve casi en pérdida, el precio regresó a mi entrada y cerré en break even (en el índice V75 en M5, nivel 24, ref #55)",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 58,
+    "text": "Vendí en Step Index anticipando giro en MACD en velas de M15, no esperé el cierre de la vela para confirmar el rechazo y terminé perdiendo la operación en una sesión de alta volatilidad sintética [op 469]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 59,
+    "text": "Vendí en Boom 1000 bajo resistencia en en velas de M15, no respeté mi riesgo inicial porque moví el stop loss esperando un giro y cerré con una pérdida grave por actuar con impaciencia frente al gráfico",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Soporte_Resistencia",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Mover Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 60,
+    "text": "Entré en compra operando V100 en MT5 en gráfico de M5 sobre la banda media de Bollinger, pero el mercado entró en consolidación lateral sin volumen y cerré en break even sin ganancia ni pérdida priorizando proteger el capital de la cuenta",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 61,
+    "text": "Venta disciplinada en Step Index: el MACD dio señal bajista en en temporalidad de 5 minutos, coloqué stop loss sobre el último máximo, espere confirmación de vela y terminé ganando manteniendo la disciplina del plan",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 62,
+    "text": "Entré en compra en el índice Step Index de Deriv en M5 tras toque en la banda inferior de Bollinger con RSI en 18, esperé el cierre de la vela dentro de la banda y salí con ganancia ✅ respetando el nivel clave del gráfico [op 624]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 63,
+    "text": "Operación ganadora en compra en el indice Volatility 100: esperé pacientemente el retesteo del soporte en en temporalidad de 5 minutos, confirmé con cierre de vela alcista y respeté mi gestión de riesgo con excelente ratio riesgo beneficio [op 700]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 64,
+    "text": "Entre en venta en el índice Step Index de Deriv en temporalidad M1 porque parecía que el MACD iba a cruzar, pero no espere el cierre de la vela y el cruce se invalidó terminando en pérdida 📉 [op 665]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 65,
+    "text": "Operé en corto operando Boom 1000 en M5 en velas de M15 combinando divergencia en MACD con rechazo en resistencia; esperé el cierre de la vela y aseguré ganancia en take profit respetando el nivel clave del gráfico",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 66,
+    "text": "Me ganó la ansiedad y el FOMO operando Bitcoin en MT5: vi que el precio subía rápido en en velas de M15 con Bollinger expandido, entré en compra tarde sin esperar retroceso y cerré en pérdida en una sesión de alta volatilidad sintética",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "BTC/USD",
+    "operational_error": "FOMO / Entrada anticipada",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 67,
+    "text": "Ejecuté compra disciplinada operando Step Index en M5 cuando el RSI tocó 28; respeté mi estrategia esperando el cierre de la vela en en temporalidad M1 y alcancé el objetivo de ganancia siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 68,
+    "text": "Venta disciplinada en cripto BTCUSD: el MACD dio señal bajista en en temporalidad M1, coloqué stop loss sobre el último máximo, esperé confirmación de vela y terminé ganando con excelente ratio riesgo beneficio",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 69,
+    "text": "Volví a entrar en compra en el indice Step Index de Deriv en M5 por revancha tras dos perdidas seguidas mirando el MACD sin señal clara; caí en sobreoperar y termine perdiendo otra vez [op 438]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 70,
+    "text": "Entré en compra en Deriv Crash 500 en H1 justo en zona institucional de soporte y Fibonacci 61.8, esperé el cierre de la vela martillo con stop loss definido y terminé ganando 🟢 siguiendo las reglas de mi bitácora [op 680]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 71,
+    "text": "Operé en corto en Volatility 75 en temporalidad de 5 minutos combinando divergencia en MACD con rechazo en resistencia; esperé el cierre de la vela y aseguré ganancia en take profit",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 72,
+    "text": "Entre en venta en Volatility 100 en velas de M15 cerca de la EMA 50, al ver indecisión y mechas en ambos lados moví a break even y la operación cerró neutra en cero dejando la cuenta intacta para la siguiente entrada [op 271]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 73,
+    "text": "Sobreoperé en el índice Boom 1000 en en M5 abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en pérdida cometiendo un fallo clásico de psicotrading [op 567]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 74,
+    "text": "Entré en compra en el activo V100 en H1 por puro impulso y FOMO al ver una vela gigante fuera de las bandas de Bollinger, compré en el techo sin confirmación y terminé perdiendo ❌ por no respetar mi plan de trading",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "FOMO / Entrada anticipada",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 75,
+    "text": "Operé compra operando caídas en Crash 500 cuando el RSI marcaba 53 en en temporalidad M1, ante la falta de volatilidad protegí la posición en empate técnico dejando la cuenta intacta para la siguiente entrada [op 387]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 76,
+    "text": "Entré en venta operando Boom 1000 en M5 en gráfico de M5 tras confirmarse el cruce bajista del MACD con histograma negativo, esperé el cierre de la vela y cerré la operación en ganancia",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 77,
+    "text": "Abrí largo en compra en el índice Crash 500 en gráfico de M5 tras ver divergencia alcista con RSI en 23, esperé confirmación de vela, gestioné el riesgo con stop loss fijo y terminé ganando con excelente ratio riesgo beneficio [op 599]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 78,
+    "text": "Entré en compra en el índice V75 en temporalidad M1 con el RSI en zona media de 45, el precio no mostró impulso claro hacia el take profit y cerré en break even preventivo al notar agotamiento en las velas [op 213]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 79,
+    "text": "Registro de seguimiento en Deriv Volatility 100 en temporalidad M1: las medias EMA 20 y EMA 50 están entrelazadas en rango horizontal, cerré mi venta en punto de entrada sin ganancia ni pérdida mientras esperaba definición de la sesión [op 314]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 80,
+    "text": "Operé en corto en el indice Volatility 100 en temporalidad M1 combinando divergencia en MACD con rechazo en resistencia; esperé el cierre de la vela y aseguré ganancia en take profit",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 81,
+    "text": "Entré en compra en Deriv Crash 500 en velas de M15 cuando el RSI estaba en 18 en zona de sobreventa, esperé el cierre de la vela alcista de confirmación, coloqué mi stop loss técnico y cerré en ganancia ✅ siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 82,
+    "text": "Operación ganadora en compra buscando spikes en Boom 1000: esperé pacientemente el retesteo del soporte en en temporalidad de 5 minutos, confirmé con cierre de vela alcista y respeté mi gestión de riesgo tras validar la estructura del mercado sintético [op 408]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 83,
+    "text": "Entré en venta en el índice Step Index de Deriv en velas de M15 cerca de la EMA 50, al ver indecisión y mechas en ambos lados moví a break even y la operación cerró neutra en cero al notar agotamiento en las velas [op 356]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 84,
+    "text": "Venta disciplinada en el índice Boom 1000: el MACD dio señal bajista en en M5, coloqué stop loss sobre el último máximo, esperé confirmación de vela y terminé ganando siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 85,
+    "text": "Operé venta operando Bitcoin en MT5 en temporalidad M1 viendo el RSI agotado en 73; no me adelanté, esperé el cierre de vela bajista y terminé ganando según la estrategia manteniendo la disciplina del plan",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Venta",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 86,
+    "text": "Abrí largo en compra en Deriv Volatility 100 en M5 tras ver divergencia alcista con RSI en 19, esperé confirmación de vela, gestioné el riesgo con stop loss fijo y terminé ganando siguiendo las reglas de mi bitácora",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 87,
+    "text": "Entré en compra buscando spikes en Boom 1000 en temporalidad M1 justo en zona institucional de soporte y Fibonacci 61.8, esperé el cierre de la vela martillo con stop loss definido y terminé ganando 🟢 respetando el nivel clave del gráfico [op 461]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Boom 1000",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 88,
+    "text": "Entré en compra en Volatility 100 en M5 cuando el RSI estaba en 27 sin esperar el cierre de la vela, fue un error de impaciencia pero justo salió una vela alcista gigante y terminé ganando por suerte (en el índice V75 en gráfico de M5, nivel 19, ref #66)",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 89,
+    "text": "Entré en venta en Deriv Crash 500 en temporalidad M1 porque parecía que el MACD iba a cruzar, pero no esperé el cierre de la vela y el cruce se invalidó terminando en pérdida en una sesión de alta volatilidad sintética",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 90,
+    "text": "Entré en compra en Volatility 75 con RSI en 26 pero no esperé el cierre de la vela; aunque estuve casi en pérdida, el precio regresó a mi entrada y cerré en break even (operando V75 en MT5 en temporalidad de 5 minutos, nivel 22, ref #30)",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 91,
+    "text": "Me ganó la ansiedad y el FOMO en Step Index: vi que el precio subía rápido en en gráfico de M5 con Bollinger expandido, entré en compra tarde sin esperar retroceso y cerré en pérdida por no respetar mi plan de trading [op 851]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "FOMO / Entrada anticipada",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 92,
+    "text": "Entré en venta en Deriv Crash 500 en temporalidad M1 tras confirmarse el cruce bajista del MACD con histograma negativo, esperé el cierre de la vela y cerré la operación en ganancia ✅ tras validar la estructura del mercado sintético [op 426]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 93,
+    "text": "Vendí en el índice Boom 1000 bajo resistencia en en M5, no respeté mi riesgo inicial porque moví el stop loss esperando un giro y cerré con una perdida grave por no respetar mi plan de trading [op 484]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Soporte_Resistencia",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Mover Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 94,
+    "text": "Entré en compra en Deriv Crash 500 en M5 justo en zona institucional de soporte y Fibonacci 61.8, esperé el cierre de la vela martillo con stop loss definido y terminé ganando 🟢 respetando el nivel clave del gráfico",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 95,
+    "text": "Entré en venta en Step Index en velas de M15 cuando el RSI subió a 82 en sobrecompra, esperé el cierre de la vela bajista de rechazo y cerré con buena ganancia 🟢 respetando el nivel clave del gráfico [op 685]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 96,
+    "text": "Sobreoperé en Step Index en en temporalidad de 5 minutos abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en pérdida cometiendo un fallo clásico de psicotrading [op 429]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 97,
+    "text": "Vendí en Deriv Crash 500 anticipando giro en MACD en gráfico de M5, no esperé el cierre de la vela para confirmar el rechazo y termine perdiendo la operación rompiendo mis reglas de gestión de riesgo [op 488]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 98,
+    "text": "Operé compra operando Step Index en M5 cuando el RSI marcaba 48 en en velas de M15, ante la falta de volatilidad protegí la posición en empate técnico al notar agotamiento en las velas [op 210]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 99,
+    "text": "Sobreoperé en BTCUSD en en temporalidad de 5 minutos abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en pérdida en una sesión de alta volatilidad sintética",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "BTC/USD",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 100,
+    "text": "Entré en compra en Deriv Crash 500 en velas de M15 con el RSI en zona media de 49, el precio no mostró impulso claro hacia el take profit y cerré en break even preventivo dejando la cuenta intacta para la siguiente entrada",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 101,
+    "text": "Sobreoperé en Deriv Volatility 100 en en temporalidad M1 abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en pérdida afectando mi estadística semanal en MT5",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 102,
+    "text": "Vendí en Step Index anticipando giro en MACD en H1, no esperé el cierre de la vela para confirmar el rechazo y terminé perdiendo la operación en una sesión de alta volatilidad sintética",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 103,
+    "text": "Entré en compra en Deriv Volatility 100 en velas de M15 justo en zona institucional de soporte y Fibonacci 61.8, esperé el cierre de la vela martillo con stop loss definido y terminé ganando tras validar la estructura del mercado sintético [op 515]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Soporte_Resistencia",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 104,
+    "text": "Entré en venta en Boom 1000 en velas de M15 debajo de la EMA 50, pero operé sin stop loss esperando que regresara y un spike brusco me dejó con una pérdida fuerte 🔴 por no respetar mi plan de trading [op 838]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Boom 1000",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 105,
+    "text": "Compra técnica en Volatility 100: las bandas de Bollinger mostraron rechazo alcista en en temporalidad M1, respeté el cierre de vela y mi stop loss, logrando una operación positiva tras validar la estructura del mercado sintético [op 666]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 106,
+    "text": "Me apresuré a entrar en compra en el índice Volatility 100 con el RSI marcando 26; no esperé a que cerrara la vela en en velas de M15 y me sacó el stop loss perdiendo 🔴 por actuar con impaciencia frente al gráfico [op 750]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 107,
+    "text": "Abrí venta en Deriv Volatility 75 en H1 con el histograma del MACD plano cerca de cero, el activo quedó sin dirección definida y cerré la orden en break even [op 386]",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 108,
+    "text": "Entré en venta en el índice V75 en temporalidad M1 totalmente contra la tendencia alcista de la EMA 200 intentando adivinar el techo y el impulso alcista me sacó en pérdida ❌ rompiendo mis reglas de gestión de riesgo [op 716]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Contra tendencia",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 109,
+    "text": "Entré en compra en el índice Step Index de Deriv en temporalidad M1 a favor de la tendencia tras el cruce de la EMA 20 sobre la EMA 50, esperé el pullback y cierre de vela con stop loss ajustado y salí en ganancia 🟢 respetando el nivel clave del gráfico [op 532]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "EMA",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 110,
+    "text": "Entré en compra operando caídas en Crash 500 en gráfico de M5 tras toque en la banda inferior de Bollinger con RSI en 24, espere el cierre de la vela dentro de la banda y salí con ganancia 🚀 con gestión de lotaje conservadora en MT5",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 111,
+    "text": "Respeté todo mi plan en Volatility 100 en M15: esperé el cierre de la vela alcista con RSI en 28 y cruce de EMA 20, coloqué stop loss técnico pero un latigazo brusco me sacó en pérdida (en el índice Volatility 100 en temporalidad de 5 minutos, nivel 27, ref #73)",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 112,
+    "text": "Compré operando Bitcoin en MT5 en M5 porque el RSI estaba en 19, pero entré sin stop loss y la caída continuó dejándome en pérdida severa por no respetar mi plan de trading [op 581]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "BTC/USD",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 113,
+    "text": "Operé en corto operando caídas en Crash 500 contra tendencia principal de la EMA 50 y EMA 200 en en gráfico de M5, no respeté la estructura alcista y termine perdiendo ❌ por actuar con impaciencia frente al gráfico",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "EMA",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "Contra tendencia",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 114,
+    "text": "Operación en empate operando V75 en MT5 en H1: señal mixta entre MACD y soporte local, decidí cerrar manualmente en precio de entrada sin pérdidas ni ganancias al notar agotamiento en las velas",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "MACD",
+    "action": "Venta",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 115,
+    "text": "Tomé entrada en compra operando Bitcoin en MT5 en M5 cuando el precio rebotó limpio en la EMA 50, esperé el cierre de la vela alcista y alcancé mi relación riesgo beneficio 1:2 ganadora [op 468]",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "EMA",
+    "action": "Compra",
+    "market": "BTC/USD",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 116,
+    "text": "Compra técnica en Crash 500: las bandas de Bollinger mostraron rechazo alcista en en velas de M15, respeté el cierre de vela y mi stop loss, logrando una operación positiva con gestión de lotaje conservadora en MT5",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "Bollinger",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 117,
+    "text": "Entré en venta en el índice Step Index de Deriv en M5 en una resistencia, pero cuando el precio se fue en mi contra moví el stop loss dos veces por miedo a perder y terminé perdiendo el doble por no respetar mi plan de trading [op 718]",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "Soporte_Resistencia",
+    "action": "Venta",
+    "market": "Step Index",
+    "operational_error": "Mover Stop Loss",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 118,
+    "text": "Operé compra en el índice Step Index de Deriv cuando el RSI marcaba 48 en en gráfico de M5, ante la falta de volatilidad protegí la posición en empate técnico mientras esperaba definición de la sesión",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "RSI",
+    "action": "Compra",
+    "market": "Step Index",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 119,
+    "text": "Sobreoperé en Deriv Volatility 75 en en H1 abriendo mi sexta compra seguida por frustración aunque el MACD estaba plano, no respeté mi límite diario y salí en pérdida cometiendo un fallo clásico de psicotrading",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 120,
+    "text": "Volví a entrar en compra en el índice Crash 500 en temporalidad de 5 minutos por revancha tras dos pérdidas seguidas mirando el MACD sin señal clara; caí en sobreoperar y terminé perdiendo otra vez 🔴 rompiendo mis reglas de gestión de riesgo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD",
+    "action": "Compra",
+    "market": "Crash 500",
+    "operational_error": "Sobreoperar",
+    "timestamp": "2026-11-02T12:00:00"
+  }
+]
