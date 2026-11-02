@@ -1,0 +1,248 @@
+{
+  "project": "TradingJournal NLP — Deriv Volatility 100 & MT5 Strategy Analyzer",
+  "production_model": "LogisticRegression",
+  "baseline_model": "MultinomialNB",
+  "nlp_config": {
+    "mode": "lemma",
+    "keep_negations": true,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 3000,
+    "min_df": 2,
+    "max_df": 0.85,
+    "vocabulary_size": 2170
+  },
+  "models": {
+    "LogisticRegression": {
+      "role": "Producción",
+      "best_params": {
+        "C": 0.5,
+        "class_weight": "balanced"
+      },
+      "cv_f1_macro": 1.0,
+      "cv_grid": [
+        {
+          "C": 0.1,
+          "cv_f1_macro": 0.998
+        },
+        {
+          "C": 0.5,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "C": 1.0,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "C": 2.0,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "C": 5.0,
+          "cv_f1_macro": 1.0
+        }
+      ],
+      "accuracy": 0.9714,
+      "precision_macro": 0.9766,
+      "recall_macro": 0.9701,
+      "f1_macro": 0.9732,
+      "per_class": {
+        "Ganadora_Disciplinada": {
+          "precision": 0.9632,
+          "recall": 0.9812,
+          "f1_score": 0.9721,
+          "error_rate": 0.0188,
+          "support": 160
+        },
+        "Riesgo_Neutral": {
+          "precision": 1.0,
+          "recall": 0.9625,
+          "f1_score": 0.9809,
+          "error_rate": 0.0375,
+          "support": 80
+        },
+        "Perdedora_Error_Operativo": {
+          "precision": 0.9667,
+          "recall": 0.9667,
+          "f1_score": 0.9667,
+          "error_rate": 0.0333,
+          "support": 180
+        }
+      },
+      "labels": [
+        "Ganadora_Disciplinada",
+        "Riesgo_Neutral",
+        "Perdedora_Error_Operativo"
+      ],
+      "confusion_matrix": [
+        [
+          157,
+          0,
+          3
+        ],
+        [
+          0,
+          77,
+          3
+        ],
+        [
+          6,
+          0,
+          174
+        ]
+      ]
+    },
+    "MultinomialNB": {
+      "role": "Baseline Comparativo",
+      "best_params": {
+        "alpha": 0.05
+      },
+      "cv_f1_macro": 1.0,
+      "cv_grid": [
+        {
+          "alpha": 0.05,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "alpha": 0.1,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "alpha": 0.5,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "alpha": 1.0,
+          "cv_f1_macro": 1.0
+        },
+        {
+          "alpha": 2.0,
+          "cv_f1_macro": 0.998
+        }
+      ],
+      "accuracy": 0.8976,
+      "precision_macro": 0.9308,
+      "recall_macro": 0.8986,
+      "f1_macro": 0.9082,
+      "per_class": {
+        "Ganadora_Disciplinada": {
+          "precision": 0.9767,
+          "recall": 0.7875,
+          "f1_score": 0.872,
+          "error_rate": 0.2125,
+          "support": 160
+        },
+        "Riesgo_Neutral": {
+          "precision": 1.0,
+          "recall": 0.925,
+          "f1_score": 0.961,
+          "error_rate": 0.075,
+          "support": 80
+        },
+        "Perdedora_Error_Operativo": {
+          "precision": 0.8157,
+          "recall": 0.9833,
+          "f1_score": 0.8917,
+          "error_rate": 0.0167,
+          "support": 180
+        }
+      },
+      "labels": [
+        "Ganadora_Disciplinada",
+        "Riesgo_Neutral",
+        "Perdedora_Error_Operativo"
+      ],
+      "confusion_matrix": [
+        [
+          126,
+          0,
+          34
+        ],
+        [
+          0,
+          74,
+          6
+        ],
+        [
+          3,
+          0,
+          177
+        ]
+      ]
+    }
+  },
+  "ablation_experiments": {
+    "stemming_vs_lemmatization": {
+      "stem": {
+        "mode": "stem",
+        "ngram_range": "(1, 1)",
+        "vocab_size": 574,
+        "accuracy": 0.7643,
+        "f1_macro": 0.7813
+      },
+      "lemma": {
+        "mode": "lemma",
+        "ngram_range": "(1, 1)",
+        "vocab_size": 585,
+        "accuracy": 0.8357,
+        "f1_macro": 0.8564
+      }
+    },
+    "unigrams_vs_bigrams": {
+      "1_1": {
+        "ngram_range": "(1, 1)",
+        "vocab_size": 585,
+        "accuracy": 0.8357,
+        "f1_macro": 0.8564
+      },
+      "1_2": {
+        "ngram_range": "(1, 2)",
+        "vocab_size": 2170,
+        "accuracy": 0.9714,
+        "f1_macro": 0.9732
+      }
+    }
+  },
+  "error_analysis": [
+    {
+      "test_index": 2055,
+      "text": "Entré en compra en Volatility 75 con RSI en 26 pero no esperé el cierre de la vela; aunque estuve casi en pérdida, el precio regresó a mi entrada y cerré en break even (en el activo V100 en M5, nivel 23, ref #75)",
+      "true_label": "Riesgo_Neutral",
+      "predicted_label": "Perdedora_Error_Operativo",
+      "probabilities": {
+        "Ganadora_Disciplinada": 0.276,
+        "Perdedora_Error_Operativo": 0.4785,
+        "Riesgo_Neutral": 0.2455
+      },
+      "explanation": "Presencia simultánea de términos de error operativo y cierre en empate (break-even): la co-ocurrencia de 'no esperar cierre de vela' con 'break even' divide la masa de probabilidad entre Perdedora_Error_Operativo y Riesgo_Neutral."
+    },
+    {
+      "test_index": 2071,
+      "text": "Entré en compra en Volatility 75 con RSI en 26 pero no espere el cierre de la vela; aunque estuve casi en pérdida, el precio regresó a mi entrada y cerré en break even (en Deriv Volatility 75 en H1, nivel 19, ref #40)",
+      "true_label": "Riesgo_Neutral",
+      "predicted_label": "Perdedora_Error_Operativo",
+      "probabilities": {
+        "Ganadora_Disciplinada": 0.2694,
+        "Perdedora_Error_Operativo": 0.4978,
+        "Riesgo_Neutral": 0.2328
+      },
+      "explanation": "Presencia simultánea de términos de error operativo y cierre en empate (break-even): la co-ocurrencia de 'no esperar cierre de vela' con 'break even' divide la masa de probabilidad entre Perdedora_Error_Operativo y Riesgo_Neutral."
+    },
+    {
+      "test_index": 1039,
+      "text": "Respeté todo mi plan en Volatility 100 en M15: esperé el cierre de la vela alcista con RSI en 28 y cruce de EMA 20, coloqué stop loss técnico pero un latigazo brusco me sacó en pérdida (en el índice Crash 500 en temporalidad M1, nivel 23, ref #23)",
+      "true_label": "Perdedora_Error_Operativo",
+      "predicted_label": "Ganadora_Disciplinada",
+      "probabilities": {
+        "Ganadora_Disciplinada": 0.5532,
+        "Perdedora_Error_Operativo": 0.3809,
+        "Riesgo_Neutral": 0.0658
+      },
+      "explanation": "Ejecución disciplinada con resultado adverso de mercado: el texto contiene señales positivas de disciplina ('esperé cierre de vela', 'stop loss bien puesto'), por lo que el modelo predice Ganadora_Disciplinada, pero la volatilidad estocástica del activo tocó el Stop Loss."
+    }
+  ],
+  "training_time_seconds": 10.07,
+  "random_seed": 42
+}
