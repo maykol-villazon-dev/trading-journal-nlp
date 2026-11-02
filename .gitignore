@@ -5,12 +5,10 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ipynb_checkpoints/
-
 # Variables de entorno y sistema
 .env
 .DS_Store
 Thumbs.db
-
 # Archivos guía locales (no subir al repo del docente)
 base.md
 Proyecto_Integrador.pdf
