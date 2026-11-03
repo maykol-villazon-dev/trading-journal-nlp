@@ -1198,5 +1198,95 @@
     "market": "Crash 500",
     "operational_error": "Sobreoperar",
     "timestamp": "2026-11-02T12:00:00"
+  },
+  {
+    "id": 121,
+    "text": "Entré en compra cuando el RSI estaba en 28, pero no esperé el cierre de la vela y terminé perdiendo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI (Nivel 28 - Sobreventa)",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T19:40:44.245760"
+  },
+  {
+    "id": 122,
+    "text": "Operé Volatility 100 en compra tras cruce de EMA 20 y confirmación de vela alcista con RSI en 32, respeté el take profit y salí en ganancia",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI (Nivel 32 - Zona Media)",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T19:40:44.254135"
+  },
+  {
+    "id": 123,
+    "text": "Entré en compra en Volatility 75 sobre soporte con bandas de Bollinger estrechas pero el mercado quedó lateral y cerré en break even sin pérdidas",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "Bandas de Bollinger",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T19:40:44.261860"
+  },
+  {
+    "id": 124,
+    "text": "Entré en compra cuando el RSI estaba en 28, pero no esperé el cierre de la vela y terminé perdiendo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI (Nivel 28 - Sobreventa)",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T19:51:56.017068"
+  },
+  {
+    "id": 125,
+    "text": "Operé Volatility 100 en compra tras cruce de EMA 20 y confirmación de vela alcista con RSI en 32, respeté el take profit y salí en ganancia",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI (Nivel 32 - Zona Media)",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T19:52:09.901968"
+  },
+  {
+    "id": 126,
+    "text": "Vendí en Crash 500 cuando el MACD giró a la baja pero entré sin stop loss y moví mi riesgo, cerré en pérdida fuerte",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "MACD (Cruce / Histograma)",
+    "action": "Venta",
+    "market": "Crash 500",
+    "operational_error": "Operar sin Stop Loss",
+    "timestamp": "2026-11-02T22:17:29.816167"
+  },
+  {
+    "id": 127,
+    "text": "Entré en compra cuando el RSI estaba en 28, pero no esperé el cierre de la vela y terminé perdiendo",
+    "prediction": "Perdedora_Error_Operativo",
+    "indicator": "RSI (Nivel 28 - Sobreventa)",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "No esperar cierre de vela",
+    "timestamp": "2026-11-02T22:31:31.449308"
+  },
+  {
+    "id": 128,
+    "text": "Operé Volatility 100 en compra tras cruce de EMA 20 y confirmación de vela alcista con RSI en 32, respeté el take profit y salí en ganancia",
+    "prediction": "Ganadora_Disciplinada",
+    "indicator": "RSI (Nivel 32 - Zona Media)",
+    "action": "Compra",
+    "market": "Volatility 100",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T22:31:31.458884"
+  },
+  {
+    "id": 129,
+    "text": "Entré en compra en Volatility 75 sobre soporte con bandas de Bollinger estrechas pero el mercado quedó lateral y cerré en break even sin pérdidas",
+    "prediction": "Riesgo_Neutral",
+    "indicator": "Bandas de Bollinger",
+    "action": "Compra",
+    "market": "Volatility 75",
+    "operational_error": "Ninguno (Disciplinado)",
+    "timestamp": "2026-11-02T22:31:31.466218"
   }
 ]

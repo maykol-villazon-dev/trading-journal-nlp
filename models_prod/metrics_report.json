@@ -243,6 +243,6 @@
       "explanation": "Ejecución disciplinada con resultado adverso de mercado: el texto contiene señales positivas de disciplina ('esperé cierre de vela', 'stop loss bien puesto'), por lo que el modelo predice Ganadora_Disciplinada, pero la volatilidad estocástica del activo tocó el Stop Loss."
     }
   ],
-  "training_time_seconds": 11.24,
+  "training_time_seconds": 5.25,
   "random_seed": 42
 }
